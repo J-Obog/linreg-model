@@ -6,19 +6,16 @@ class LinReg_Model:
         self.__learning_rate = learning_rate
         self.__iterations = iterations
 
-    def grad_descent(self):
-        for itr in self.__iterations:
-            pass
-        return 0
-
     #tweaking weights with gradient descent
     def train(self, X, Y):
-        X = np.asarray(X)
-        Y = np.asarray(Y)
+        X, Y = (np.asarray(X), np.asarray(Y))
         m,n = X.shape
         self.__weigths = np.ones(n + 1)
-        B = np.ones((m, 1)) #bias matrix
-        X = np.hstack((X, B))
+        X = np.hstack((X, np.ones((m, 1))))
+
+        for itr in self.__iterations:
+            pass
+        return 0 
 
     #test model with inputs
     def predict(self, X):
